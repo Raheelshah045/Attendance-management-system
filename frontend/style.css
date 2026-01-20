@@ -1,0 +1,472 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    background: #f0f0f0; 
+    font-family: Arial, sans-serif; 
+}
+
+header {
+    background: #2196F3;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+}
+
+.menu-btn {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    color: #2196F3;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.menu-btn:hover {
+    background: #f5f5f5;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.menu {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    min-width: 180px;
+    display: none;
+    z-index: 1000;
+}
+
+.menu.show {
+    display: block;
+}
+
+.menu button {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background: white;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.menu button:first-child {
+    border-radius: 5px 5px 0 0;
+}
+
+.menu button:last-child {
+    border-radius: 0 0 5px 5px;
+    border-bottom: none;
+}
+
+.menu button:hover {
+    background: #f5f5f5;
+}
+
+.stats { 
+    max-width: 1100px; 
+    margin: 25px auto; 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; 
+    padding: 0 20px; 
+}
+
+.stat-box { 
+    border-radius: 8px; 
+    padding: 20px; 
+    text-align: center; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    background: white; 
+}
+
+.stat-box h3 { 
+    font-size: 14px; 
+    margin-bottom: 10px; 
+    color: #666;
+}
+
+.stat-box .number { 
+    color: #333; 
+    font-size: 28px; 
+    font-weight: bold; 
+}
+
+.stat-box.green { 
+    background: #4CAF50; 
+}
+
+.stat-box.green h3,
+.stat-box.green .number {
+    color: white;
+}
+
+.stat-box.red { 
+    background: #f44336; 
+}
+
+.stat-box.red h3,
+.stat-box.red .number {
+    color: white;
+}
+
+.stat-box.yellow { 
+    background: #FFC107; 
+}
+
+.main-content { 
+    max-width: 1000px; 
+    margin: 25px auto; 
+    background: white; 
+    border-radius: 8px; 
+    padding: 25px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+.main-content h2 { 
+    text-align: center; 
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.date-box { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; 
+    margin-bottom: 20px; 
+}
+
+.date-box select { 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    font-size: 14px;
+    width: 100%;
+}
+
+.date-box select:focus { 
+    border-color: #2196F3; 
+    outline: none; 
+}
+
+.table-box {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    min-width: 600px;
+}
+
+th { 
+    background: #2196F3; 
+    color: white; 
+    padding: 12px 10px; 
+    text-align: left;
+    font-size: 14px;
+}
+
+td { 
+    padding: 12px 10px; 
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+tr:hover { 
+    background: #f9f9f9; 
+}
+
+.status-radio { 
+    display: flex; 
+    gap: 8px;
+}
+
+.radio-option {
+    flex: 1;
+}
+
+input[type="radio"] { 
+    display: none; 
+}
+
+label { 
+    padding: 8px 12px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    background: white; 
+    cursor: pointer;
+    font-size: 13px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+label:hover { 
+    background: #f5f5f5; 
+}
+
+input[value="present"]:checked + label { 
+    background: #4caf50; 
+    color: white; 
+    border-color: #4caf50; 
+}
+
+input[value="absent"]:checked + label { 
+    background: #f44336; 
+    color: white; 
+    border-color: #f44336; 
+}
+
+input[value="excused"]:checked + label { 
+    background: #ffc107; 
+    border-color: #ffc107; 
+}
+
+.submit-btn { 
+    width: 100%; 
+    padding: 12px; 
+    background: #2196F3; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    cursor: pointer;
+}
+
+.submit-btn:hover { 
+    background: #1976D2; 
+}
+
+.message {
+    background: #4caf50;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: none;
+}
+
+.form-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-container {
+    background: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.form-header {
+    background: #2196F3;
+    color: white;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+.form-header.red {
+    background: #f44336;
+}
+
+.form-header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.form-body {
+    padding: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+.form-group input[readonly] {
+    background: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.info-box {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+}
+
+.info-box p {
+    margin: 0;
+    color: #856404;
+    font-size: 13px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.cancel-btn, .save-btn, .remove-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.cancel-btn {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.cancel-btn:hover {
+    background: #d0d0d0;
+}
+
+.save-btn {
+    background: #2196F3;
+    color: white;
+}
+
+.save-btn:hover {
+    background: #1976D2;
+}
+
+.remove-btn {
+    background: #f44336;
+    color: white;
+}
+
+.remove-btn:hover {
+    background: #d32f2f;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+    }
+    
+    .menu-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .stat-box {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 18px;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .date-box {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    th, td {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+    
+    label {
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+}

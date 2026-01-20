@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-page">
+        <div class="form-container">
+            <div class="form-header">
+                <h1>Add New Student</h1>
+                <a href="index.html" class="back-link">Back to Home</a>
+            </div>
+            
+            <div class="form-body">
+                <form id="addStudentForm">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="firstName" placeholder="Enter first name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="lastName" placeholder="Enter last name" required>
+                    </div>
+                    
+                    <div class="message" id="message" style="margin-bottom: 20px;">
+                        Student added successfully!
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <a href="index.html" class="cancel-btn" style="display: inline-block; text-align: center; text-decoration: none; padding: 12px 20px;">Cancel</a>
+                        <button type="submit" class="save-btn">Save Student</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

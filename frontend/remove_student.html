@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Student</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-page">
+        <div class="form-container">
+            <div class="form-header red">
+                <h1>Remove Student</h1>
+                <a href="index.html" class="back-link">Back to Home</a>
+            </div>
+            
+            <div class="form-body">
+                <form id="removeStudentForm">
+                    <div class="form-group">
+                        <label>Student ID</label>
+                        <input type="text" id="removeStudentId" placeholder="Enter student ID" required>
+                    </div>
+                    
+                    <div class="message" id="removeMessage" style="margin-bottom: 20px; background: #f44336;">
+                        Student removed successfully!
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <a href="index.html" class="cancel-btn" style="display: inline-block; text-align: center; text-decoration: none; padding: 12px 20px;">Cancel</a>
+                        <button type="submit" class="remove-btn">Remove Student</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
